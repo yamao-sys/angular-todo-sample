@@ -3,12 +3,12 @@ name: chromatic
 on:
   pull_request:
     paths:
-      - 'frontend/sample_todos/src/components/**/*.tsx'
+      - 'frontend/todo_sample/src/components/**/*.tsx'
   push:
     branches:
       - main
     paths:
-      - 'frontend/sample_todos/src/components/**/*.tsx'
+      - 'frontend/todo_sample/src/components/**/*.tsx'
 
 jobs:
   chromatic-deployment:
@@ -27,11 +27,11 @@ jobs:
         with:
           # 共通コンポーネントを対象とする
           PATTERNS: |
-            frontend/sample_todos/src/components/**/*.tsx
+            frontend/todo_sample/src/components/**/*.tsx
 
       - name: Install dependencies
         if: steps.check-diff.outputs.diff
-        working-directory: ./frontend/sample_todos
+        working-directory: ./frontend/todo_sample
         run: npm ci
 
       - name: Publish to Chromatic
@@ -40,4 +40,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          workingDir: ./frontend/sample_todos
+          workingDir: ./frontend/todo_sample

@@ -3,10 +3,10 @@ name: frontend_test
 on:
   pull_request:
     paths:
-      - 'frontend/sample_todos/**/*.js'
-      - 'frontend/sample_todos/**/*.ts'
-      - 'frontend/sample_todos/**/*.tsx'
-      - 'frontend/sample_todos/package.json'
+      - 'frontend/todo_sample/**/*.js'
+      - 'frontend/todo_sample/**/*.ts'
+      - 'frontend/todo_sample/**/*.tsx'
+      - 'frontend/todo_sample/package.json'
 
 jobs:
   test:
@@ -22,11 +22,11 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        working-directory: ./frontend/sample_todos
+        working-directory: ./frontend/todo_sample
         run: npm install
 
       - name: Run Jest
-        working-directory: ./frontend/sample_todos
+        working-directory: ./frontend/todo_sample
         env:
           CHROME_BIN: /usr/bin/chromium
         run: npm run test:ci
