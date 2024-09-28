@@ -21,99 +21,11 @@
     </div>
 
     <div *ngSwitchCase="'input'">
-      <div>
-        <label
-          htmlFor="name"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
-        >
-          <span class="font-bold">ユーザ名</span>
-        </label>
-        <input
-          id="name"
-          type="text"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          [(ngModel)]="signUpInputs.name"
-        />
-        <div *ngIf="!!validationErrors.errors?.name?.length" class="w-full pt-5 text-left">
-          <p *ngFor="let message of validationErrors.errors.name" class="text-red-400">
-            {{ message }}
-          </p>
-        </div>
-      </div>
-
-      <div class="mt-8">
-        <label
-          htmlFor="email"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
-        >
-          <span class="font-bold">メールアドレス</span>
-        </label>
-        <input
-          id="email"
-          type="text"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          [(ngModel)]="signUpInputs.email"
-        />
-        <div *ngIf="!!validationErrors.errors?.email?.length" class="w-full pt-5 text-left">
-          <p *ngFor="let message of validationErrors.errors.email" class="text-red-400">
-            {{ message }}
-          </p>
-        </div>
-      </div>
-
-      <div class="mt-8">
-        <label
-          htmlFor="password"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
-        >
-          <span class="font-bold">パスワード</span>
-        </label>
-        <input
-          id="password"
-          type="password"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          [(ngModel)]="signUpInputs.password"
-        />
-        <div *ngIf="!!validationErrors.errors?.password?.length" class="w-full pt-5 text-left">
-          <p *ngFor="let message of validationErrors.errors.password" class="text-red-400">
-            {{ message }}
-          </p>
-        </div>
-      </div>
-
-      <div class="mt-8">
-        <label
-          htmlFor="password-confirm"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
-        >
-          <span class="font-bold">パスワード</span>
-        </label>
-        <input
-          id="password-confirm"
-          type="password"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          [(ngModel)]="signUpInputs.passwordConfirm"
-        />
-        <div
-          *ngIf="!!validationErrors.errors?.passwordConfirm?.length"
-          class="w-full pt-5 text-left"
-        >
-          <p *ngFor="let message of validationErrors.errors.passwordConfirm" class="text-red-400">
-            {{ message }}
-          </p>
-        </div>
-      </div>
-
-      <div class="w-full flex justify-center">
-        <div class="mt-16">
-          <button
-            class="py-2 px-8 border-green-500 bg-green-500 rounded-xl text-white"
-            (click)="handleValidateSignUp()"
-          >
-            確認画面へ
-          </button>
-        </div>
-      </div>
+      <app-sign-up-input
+        [signUpInputs]="signUpInputs"
+        [validationErrors]="validationErrors"
+        (handleValidateSignUp)="handleValidateSignUp()"
+      />
     </div>
 
     <div *ngSwitchCase="'confirmation'">
