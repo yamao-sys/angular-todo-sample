@@ -1,4 +1,4 @@
-<div>
+<app-base-form-box>
   <label
     htmlFor="name"
     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
@@ -16,9 +16,9 @@
       {{ message }}
     </p>
   </div>
-</div>
+</app-base-form-box>
 
-<div class="mt-8">
+<app-base-form-box [needsMargin]="true">
   <label
     htmlFor="email"
     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
@@ -36,9 +36,9 @@
       {{ message }}
     </p>
   </div>
-</div>
+</app-base-form-box>
 
-<div class="mt-8">
+<app-base-form-box [needsMargin]="true">
   <label
     htmlFor="password"
     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
@@ -56,9 +56,9 @@
       {{ message }}
     </p>
   </div>
-</div>
+</app-base-form-box>
 
-<div class="mt-8">
+<app-base-form-box [needsMargin]="true">
   <label
     htmlFor="password-confirm"
     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
@@ -76,7 +76,7 @@
       {{ message }}
     </p>
   </div>
-</div>
+</app-base-form-box>
 
 <div class="w-full flex justify-center">
   <div class="mt-16">
