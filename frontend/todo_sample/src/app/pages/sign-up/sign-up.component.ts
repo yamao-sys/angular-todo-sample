@@ -5,6 +5,7 @@ import { postSignUp, postValidateSignUp } from 'apis/authApi';
 import { CommonModule } from '@angular/common';
 import { SignUpInputComponent } from './sign-up-input/sign-up-input.component';
 import { SignUpConfirmationComponent } from './sign-up-confirmation/sign-up-confirmation.component';
+import { SignUpThanksComponent } from './sign-up-thanks/sign-up-thanks.component';
 
 type PhaseType = 'input' | 'confirmation' | 'thanks';
 
@@ -20,7 +21,13 @@ const INITIAL_VALIDATION_ERRORS = {
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [FormsModule, CommonModule, SignUpInputComponent, SignUpConfirmationComponent],
+  imports: [
+    FormsModule,
+    CommonModule,
+    SignUpInputComponent,
+    SignUpConfirmationComponent,
+    SignUpThanksComponent,
+  ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css',
 })
