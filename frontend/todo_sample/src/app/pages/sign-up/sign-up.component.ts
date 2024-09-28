@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { SignUpInputComponent } from './sign-up-input/sign-up-input.component';
 import { SignUpConfirmationComponent } from './sign-up-confirmation/sign-up-confirmation.component';
 import { SignUpThanksComponent } from './sign-up-thanks/sign-up-thanks.component';
+import { AuthBaseLayoutComponent } from '../auth/components/auth-base-layout/auth-base-layout.component';
 
 type PhaseType = 'input' | 'confirmation' | 'thanks';
 
@@ -24,6 +25,7 @@ const INITIAL_VALIDATION_ERRORS = {
   imports: [
     FormsModule,
     CommonModule,
+    AuthBaseLayoutComponent,
     SignUpInputComponent,
     SignUpConfirmationComponent,
     SignUpThanksComponent,
