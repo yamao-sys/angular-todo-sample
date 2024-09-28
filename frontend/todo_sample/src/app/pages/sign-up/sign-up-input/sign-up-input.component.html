@@ -37,13 +37,4 @@
   <app-validation-errors [messages]="validationErrors.errors.passwordConfirm ?? []" />
 </app-base-form-box>
 
-<div class="w-full flex justify-center">
-  <div class="mt-16">
-    <button
-      class="py-2 px-8 border-green-500 bg-green-500 rounded-xl text-white"
-      (click)="emitHandleValidateSignUp()"
-    >
-      確認画面へ
-    </button>
-  </div>
-</div>
+<app-submit-button [labelText]="'確認画面へ'" (handleSubmit)="emitHandleValidateSignUp()" />

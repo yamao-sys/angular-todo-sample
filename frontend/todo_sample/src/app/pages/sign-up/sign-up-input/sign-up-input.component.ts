@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BaseFormBoxComponent } from 'app/components/base-form-box/base-form-box.component';
 import { InputFormComponent } from 'app/components/input-form/input-form.component';
+import { SubmitButtonComponent } from 'app/components/molecules/submit-button/submit-button.component';
 import { ValidationErrorsComponent } from 'app/components/validation-errors/validation-errors.component';
 import { SignUpDto, ValidateSignUpResponseDto } from 'generated/auth/@types';
 
@@ -15,6 +16,7 @@ import { SignUpDto, ValidateSignUpResponseDto } from 'generated/auth/@types';
     BaseFormBoxComponent,
     InputFormComponent,
     ValidationErrorsComponent,
+    SubmitButtonComponent,
   ],
   templateUrl: './sign-up-input.component.html',
   styleUrl: './sign-up-input.component.css',
