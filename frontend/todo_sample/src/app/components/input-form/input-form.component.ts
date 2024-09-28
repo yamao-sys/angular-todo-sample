@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -14,4 +14,10 @@ export class InputFormComponent {
   @Input() labelText: string;
   @Input() type = 'text';
   @Input() inputValue: string;
+
+  @Output() emitInput = new EventEmitter<string>();
+
+  emitInputValue(event: KeyboardEvent) {
+    this.emitInput.emit((event.target as HTMLInputElement).value);
+  }
 }

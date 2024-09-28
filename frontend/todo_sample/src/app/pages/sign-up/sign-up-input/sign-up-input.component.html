@@ -4,6 +4,7 @@
     [labelText]="'ユーザ名'"
     [type]="'text'"
     [inputValue]="signUpInputs.name ?? ''"
+    (emitInput)="updateSignUpInputs('name', $event)"
   />
   <app-validation-errors [messages]="validationErrors.errors.name ?? []" />
 </app-base-form-box>
@@ -13,6 +14,7 @@
     [labelId]="'email'"
     [labelText]="'メールアドレス'"
     [inputValue]="signUpInputs.email"
+    (emitInput)="updateSignUpInputs('email', $event)"
   />
   <app-validation-errors [messages]="validationErrors.errors.email ?? []" />
 </app-base-form-box>
@@ -23,6 +25,7 @@
     [labelText]="'パスワード'"
     [type]="'password'"
     [inputValue]="signUpInputs.password"
+    (emitInput)="updateSignUpInputs('password', $event)"
   />
   <app-validation-errors [messages]="validationErrors.errors.password ?? []" />
 </app-base-form-box>
@@ -33,6 +36,7 @@
     [labelText]="'パスワード確認用'"
     [type]="'password'"
     [inputValue]="signUpInputs.passwordConfirm"
+    (emitInput)="updateSignUpInputs('passwordConfirm', $event)"
   />
   <app-validation-errors [messages]="validationErrors.errors.passwordConfirm ?? []" />
 </app-base-form-box>

@@ -30,4 +30,8 @@ export class SignUpInputComponent {
   emitHandleValidateSignUp() {
     this.handleValidateSignUp.emit();
   }
+
+  updateSignUpInputs(key: keyof SignUpDto, value: string) {
+    this.signUpInputs[key] = value;
+  }
 }
