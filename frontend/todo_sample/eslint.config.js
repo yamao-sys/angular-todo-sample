@@ -31,7 +31,7 @@ module.exports = tseslint.config(
         },
       ],
     },
-    ignores: ['app/generated/**/*.ts'],
+    ignores: ['src/generated/**/*.ts'],
   },
   {
     files: ['**/*.html'],
