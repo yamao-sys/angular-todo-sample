@@ -1,0 +1,43 @@
+<div class="p-4 md:p-16">
+  <div class="md:w-3/5 mx-auto" [ngSwitch]="phase">
+    <div class="flex justify-between mb-16">
+      <div>
+        <span [ngClass]="phase === 'input' ? 'text-blue-300' : 'text-gray-300'">
+          登録情報の入力
+        </span>
+      </div>
+      <div class="text-gray-300">&gt;&gt;</div>
+
+      <div>
+        <span [ngClass]="phase === 'confirmation' ? 'text-blue-300' : 'text-gray-300'">
+          登録情報の確認
+        </span>
+      </div>
+      <div class="text-gray-300">&gt;&gt;</div>
+
+      <div>
+        <span [ngClass]="phase === 'thanks' ? 'text-blue-300' : 'text-gray-300'">登録完了</span>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'input'">
+      <app-sign-up-input
+        [signUpInputs]="signUpInputs"
+        [validationErrors]="validationErrors"
+        (handleValidateSignUp)="handleValidateSignUp()"
+      />
+    </div>
+
+    <div *ngSwitchCase="'confirmation'">
+      <app-sign-up-confirmation
+        [signUpInputs]="signUpInputs"
+        (backToInput)="togglePhase('input')"
+        (handleSignUp)="handleSignUp()"
+      />
+    </div>
+
+    <div *ngSwitchCase="'thanks'">
+      <app-sign-up-thanks />
+    </div>
+  </div>
+</div>
