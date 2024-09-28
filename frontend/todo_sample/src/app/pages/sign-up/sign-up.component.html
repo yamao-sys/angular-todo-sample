@@ -29,32 +29,11 @@
     </div>
 
     <div *ngSwitchCase="'confirmation'">
-      <div class="flex w-full justify-around">
-        <div class="w-1/2 align-middle">ユーザ名:</div>
-        <div class="w-1/2 align-middle">{{ signUpInputs.name }}</div>
-      </div>
-      <div class="flex w-full justify-around mt-8">
-        <div class="w-1/2 align-middle">メールアドレス:</div>
-        <div class="w-1/2 align-middle">{{ signUpInputs.email }}</div>
-      </div>
-      <div class="flex w-full justify-around mt-8">
-        <div class="w-1/2 align-middle">パスワード:</div>
-        <div class="w-1/2 align-middle">{{ '*'.repeat(signUpInputs.password.length) }}</div>
-      </div>
-      <div class="flex w-full justify-around mt-16">
-        <button
-          class="py-2 px-8 border-gray-500 bg-gray-500 rounded-xl text-white"
-          (click)="togglePhase('input')"
-        >
-          入力へ戻る
-        </button>
-        <button
-          class="py-2 px-8 border-green-500 bg-green-500 rounded-xl text-white"
-          (click)="handleSignUp()"
-        >
-          登録する
-        </button>
-      </div>
+      <app-sign-up-confirmation
+        [signUpInputs]="signUpInputs"
+        (backToInput)="togglePhase('input')"
+        (handleSignUp)="handleSignUp()"
+      />
     </div>
 
     <div *ngSwitchCase="'thanks'">
