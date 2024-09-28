@@ -1,0 +1,27 @@
+<app-auth-base-layout>
+  <app-validation-errors
+    *ngIf="!!validationErrors.errors.length"
+    [messages]="validationErrors.errors"
+  />
+
+  <app-base-form-box [needsMargin]="true">
+    <app-input-form
+      [labelId]="'email'"
+      [labelText]="'メールアドレス'"
+      [inputValue]="signInInputs.email"
+      (emitInput)="updateSignInInputs('email', $event)"
+    />
+  </app-base-form-box>
+
+  <app-base-form-box [needsMargin]="true">
+    <app-input-form
+      [labelId]="'password'"
+      [labelText]="'パスワード'"
+      [type]="'password'"
+      [inputValue]="signInInputs.password"
+      (emitInput)="updateSignInInputs('password', $event)"
+    />
+  </app-base-form-box>
+
+  <app-submit-button [labelText]="'ログイン'" (handleSubmit)="handleSignIn()" />
+</app-auth-base-layout>

@@ -1,6 +1,6 @@
 import aspida, { FetchConfig } from '@aspida/fetch';
 import api from 'generated/auth/$api';
-import { SignUpDto } from 'generated/auth/@types';
+import { SignInDto, SignUpDto } from 'generated/auth/@types';
 
 const getAuthApiClient = (options?: FetchConfig) => {
   console.log(import.meta.env['NG_APP_BASE_API_URL']);
@@ -38,16 +38,16 @@ export const postSignUp = async (data: SignUpDto) => {
   return { result: response.body.result };
 };
 
-// export const postSignIn = async (data: SignInDto) => {
-//   const response = await getAuthApiClient({ credentials: 'include' }).auth.signIn.post({
-//     body: {
-//       email: data.email,
-//       password: data.password,
-//     },
-//   });
+export const postSignIn = async (data: SignInDto) => {
+  const response = await getAuthApiClient({ credentials: 'include' }).auth.signIn.post({
+    body: {
+      email: data.email,
+      password: data.password,
+    },
+  });
 
-//   return response.body;
-// };
+  return response.body;
+};
 
 // export const checkSignedIn = async () => {
 //   return await getAuthApiClient({ credentials: 'include' }).auth.checkSignedIn.$get();
