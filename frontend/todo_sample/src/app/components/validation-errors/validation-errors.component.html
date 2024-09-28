@@ -1,0 +1,5 @@
+<div *ngIf="!!messages?.length" class="w-full pt-5 text-left">
+  <p *ngFor="let message of messages" class="text-red-400">
+    {{ message }}
+  </p>
+</div>

@@ -5,11 +5,7 @@
     [type]="'text'"
     [inputValue]="signUpInputs.name ?? ''"
   />
-  <div *ngIf="!!validationErrors.errors?.name?.length" class="w-full pt-5 text-left">
-    <p *ngFor="let message of validationErrors.errors.name" class="text-red-400">
-      {{ message }}
-    </p>
-  </div>
+  <app-validation-errors [messages]="validationErrors.errors.name ?? []" />
 </app-base-form-box>
 
 <app-base-form-box [needsMargin]="true">
@@ -18,11 +14,7 @@
     [labelText]="'メールアドレス'"
     [inputValue]="signUpInputs.email"
   />
-  <div *ngIf="!!validationErrors.errors?.email?.length" class="w-full pt-5 text-left">
-    <p *ngFor="let message of validationErrors.errors.email" class="text-red-400">
-      {{ message }}
-    </p>
-  </div>
+  <app-validation-errors [messages]="validationErrors.errors.email ?? []" />
 </app-base-form-box>
 
 <app-base-form-box [needsMargin]="true">
@@ -32,11 +24,7 @@
     [type]="'password'"
     [inputValue]="signUpInputs.password"
   />
-  <div *ngIf="!!validationErrors.errors?.password?.length" class="w-full pt-5 text-left">
-    <p *ngFor="let message of validationErrors.errors.password" class="text-red-400">
-      {{ message }}
-    </p>
-  </div>
+  <app-validation-errors [messages]="validationErrors.errors.password ?? []" />
 </app-base-form-box>
 
 <app-base-form-box [needsMargin]="true">
@@ -46,11 +34,7 @@
     [type]="'password'"
     [inputValue]="signUpInputs.passwordConfirm"
   />
-  <div *ngIf="!!validationErrors.errors?.passwordConfirm?.length" class="w-full pt-5 text-left">
-    <p *ngFor="let message of validationErrors.errors.passwordConfirm" class="text-red-400">
-      {{ message }}
-    </p>
-  </div>
+  <app-validation-errors [messages]="validationErrors.errors.passwordConfirm ?? []" />
 </app-base-form-box>
 
 <div class="w-full flex justify-center">
