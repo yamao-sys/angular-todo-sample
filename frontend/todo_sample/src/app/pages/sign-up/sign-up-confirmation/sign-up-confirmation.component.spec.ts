@@ -8,12 +8,17 @@ describe('SignUpConfirmationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SignUpConfirmationComponent]
-    })
-    .compileComponents();
+      imports: [SignUpConfirmationComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SignUpConfirmationComponent);
     component = fixture.componentInstance;
+    component.signUpInputs = {
+      name: 'test_name',
+      email: 'test@example.com',
+      password: 'Passwor1',
+      passwordConfirm: 'Passwor1',
+    };
     fixture.detectChanges();
   });
 
