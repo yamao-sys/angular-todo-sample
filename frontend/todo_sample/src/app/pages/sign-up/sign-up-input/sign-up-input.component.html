@@ -1,15 +1,9 @@
 <app-base-form-box>
-  <label
-    htmlFor="name"
-    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
-  >
-    <span class="font-bold">ユーザ名</span>
-  </label>
-  <input
-    id="name"
-    type="text"
-    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-    [(ngModel)]="signUpInputs.name"
+  <app-input-form
+    [labelId]="'name'"
+    [labelText]="'ユーザ名'"
+    [type]="'text'"
+    [inputValue]="signUpInputs.name ?? ''"
   />
   <div *ngIf="!!validationErrors.errors?.name?.length" class="w-full pt-5 text-left">
     <p *ngFor="let message of validationErrors.errors.name" class="text-red-400">
@@ -19,17 +13,10 @@
 </app-base-form-box>
 
 <app-base-form-box [needsMargin]="true">
-  <label
-    htmlFor="email"
-    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
-  >
-    <span class="font-bold">メールアドレス</span>
-  </label>
-  <input
-    id="email"
-    type="text"
-    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-    [(ngModel)]="signUpInputs.email"
+  <app-input-form
+    [labelId]="'email'"
+    [labelText]="'メールアドレス'"
+    [inputValue]="signUpInputs.email"
   />
   <div *ngIf="!!validationErrors.errors?.email?.length" class="w-full pt-5 text-left">
     <p *ngFor="let message of validationErrors.errors.email" class="text-red-400">
@@ -39,17 +26,11 @@
 </app-base-form-box>
 
 <app-base-form-box [needsMargin]="true">
-  <label
-    htmlFor="password"
-    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
-  >
-    <span class="font-bold">パスワード</span>
-  </label>
-  <input
-    id="password"
-    type="password"
-    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-    [(ngModel)]="signUpInputs.password"
+  <app-input-form
+    [labelId]="'password'"
+    [labelText]="'パスワード'"
+    [type]="'password'"
+    [inputValue]="signUpInputs.password"
   />
   <div *ngIf="!!validationErrors.errors?.password?.length" class="w-full pt-5 text-left">
     <p *ngFor="let message of validationErrors.errors.password" class="text-red-400">
@@ -59,17 +40,11 @@
 </app-base-form-box>
 
 <app-base-form-box [needsMargin]="true">
-  <label
-    htmlFor="password-confirm"
-    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
-  >
-    <span class="font-bold">パスワード</span>
-  </label>
-  <input
-    id="password-confirm"
-    type="password"
-    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-    [(ngModel)]="signUpInputs.passwordConfirm"
+  <app-input-form
+    [labelId]="'password-confirm'"
+    [labelText]="'パスワード確認用'"
+    [type]="'password'"
+    [inputValue]="signUpInputs.passwordConfirm"
   />
   <div *ngIf="!!validationErrors.errors?.passwordConfirm?.length" class="w-full pt-5 text-left">
     <p *ngFor="let message of validationErrors.errors.passwordConfirm" class="text-red-400">
