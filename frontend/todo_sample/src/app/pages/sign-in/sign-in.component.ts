@@ -50,7 +50,7 @@ export class SignInComponent {
         this.signInInputs.password = '';
       } else {
         window.alert('ログインに成功しました！');
-        this.router.navigate(['/']);
+        this.router.navigate(['/todos/list']);
       }
     } catch (error) {
       // TODO: エラーハンドリング
