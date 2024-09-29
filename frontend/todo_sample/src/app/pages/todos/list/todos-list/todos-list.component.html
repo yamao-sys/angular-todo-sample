@@ -1,0 +1,32 @@
+<div class="p-4 md:p-16">
+  <div class="md:w-3/5 mx-auto">
+    <div *ngIf="!!todos.length">
+      <div
+        *ngFor="let todo of todos"
+        class="[&:not(:first-child)]:mt-8 border-2 border-gray-900 flex"
+      >
+        <div class="p-4 w-1/2">
+          <div class="text-sm md:text-xl lg:text-3xl break-words">
+            {{ todo.title }}
+          </div>
+        </div>
+        <div class="w-1/2 flex justify-center items-center">
+          <app-base-button
+            [labelText]="'編集する'"
+            [additionalStyle]="'text-xs lg:text-sm py-1 px-2 md:px-4'"
+            (emit)="handleRouteToEditPage(todo.id)"
+          />
+          <app-base-button
+            [labelText]="'削除する'"
+            [additionalStyle]="
+              'ml-2 text-xs lg:text-sm py-1 px-2 md:px-4 border-red-500 bg-red-500'
+            "
+            (emit)="handleDeleteReadingRecord(todo.id)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!todos.length">まだTODOが0件です。</div>
+  </div>
+</div>
