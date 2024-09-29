@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
+import { NAVIGATION_PAGE } from './consts/route';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,6 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'todo_sample';
+
+  navigation_map = NAVIGATION_PAGE;
 }

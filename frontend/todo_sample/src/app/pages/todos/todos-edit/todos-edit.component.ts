@@ -4,6 +4,7 @@ import { fetchTodo, patchUpdateTodo } from 'apis/todoApi';
 import { BaseFormBoxComponent } from 'app/components/base-form-box/base-form-box.component';
 import { InputFormComponent } from 'app/components/input-form/input-form.component';
 import { SubmitButtonComponent } from 'app/components/molecules/submit-button/submit-button.component';
+import { NAVIGATION_LIST } from 'app/consts/route';
 import { UpdateTodoDto } from 'generated/todos/@types';
 
 @Component({
@@ -38,7 +39,7 @@ export class TodosEditComponent implements OnInit {
   handleUpdateTodo() {
     patchUpdateTodo(this.todoId, this.todoInput).then(() => {
       window.alert('TODOの更新に成功しました!');
-      this.router.navigate(['todos/list']);
+      this.router.navigate([NAVIGATION_LIST.todos.list]);
     });
   }
 }

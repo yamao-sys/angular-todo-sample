@@ -4,6 +4,7 @@ import { postCreateTodo } from 'apis/todoApi';
 import { BaseFormBoxComponent } from 'app/components/base-form-box/base-form-box.component';
 import { InputFormComponent } from 'app/components/input-form/input-form.component';
 import { SubmitButtonComponent } from 'app/components/molecules/submit-button/submit-button.component';
+import { NAVIGATION_LIST } from 'app/consts/route';
 import { CreateTodoDto } from 'generated/todos/@types';
 
 @Component({
@@ -28,7 +29,7 @@ export class TodosNewComponent {
   handleCreateTodo() {
     postCreateTodo(this.todoInput).then(() => {
       window.alert('TODOの作成に成功しました!');
-      this.router.navigate(['todos/list']);
+      this.router.navigate([NAVIGATION_LIST.todos.list]);
     });
   }
 }
