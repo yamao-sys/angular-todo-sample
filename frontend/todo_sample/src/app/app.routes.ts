@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
-import { TodosListComponent } from './pages/todos/list/todos-list/todos-list.component';
+import { TodosListComponent } from './pages/todos/todos-list/todos-list.component';
 import { AuthGuard } from 'guards/auth-guard';
-import { TodosNewComponent } from './pages/todos/new/todos-new/todos-new.component';
+import { TodosNewComponent } from './pages/todos/todos-new/todos-new.component';
 
 export const routes: Routes = [
   {
