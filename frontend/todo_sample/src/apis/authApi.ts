@@ -3,7 +3,6 @@ import api from 'generated/auth/$api';
 import { SignInDto, SignUpDto } from 'generated/auth/@types';
 
 const getAuthApiClient = (options?: FetchConfig) => {
-  console.log(import.meta.env['NG_APP_BASE_API_URL']);
   const baseFetchConditions = {
     baseURL: import.meta.env['NG_APP_BASE_API_URL'],
     throwHttpErrors: true,
@@ -49,6 +48,6 @@ export const postSignIn = async (data: SignInDto) => {
   return response.body;
 };
 
-// export const checkSignedIn = async () => {
-//   return await getAuthApiClient({ credentials: 'include' }).auth.checkSignedIn.$get();
-// };
+export const checkSignedIn = async () => {
+  return await getAuthApiClient({ credentials: 'include' }).auth.checkSignedIn.$get();
+};
