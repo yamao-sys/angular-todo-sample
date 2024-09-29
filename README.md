@@ -16,6 +16,8 @@ Angular による TODO リストの作成
   - https://qiita.com/Dera04/items/477b149ea0bc5e39ef2a
 - ngClass
   - https://qiita.com/rrih/items/ed6178bff7490de0840b
+- ngOnInit
+  - https://zenn.dev/shrek13/articles/between-ngoninit-constructor
 - Angular で子コンポーネントの表現
   - https://stackoverflow.com/questions/40476427/how-to-get-children-component-like-in-reacts-this-props-children-in-angular-2
 - Angular で親子間の値の双方向データバインディング
@@ -27,3 +29,9 @@ Angular による TODO リストの作成
   - https://stackblitz.com/edit/ngx-env-3ey8js?file=.env.production
 - コンポーネントのテスト
   - https://qiita.com/eguchiryo_tg/items/f71bda926a2350eff599
+- Angularのナビゲーション
+  - https://it-infomation.com/angular-router-navigate-parameter-passing/
+- 認証ルーティング
+  - https://zenn.dev/mikakane/articles/spaauth_3_angular
+  - https://qiita.com/daiki7nohe/items/ddeebad790ae4127d9a7
+  - https://stackoverflow.com/questions/38425461/angular2-canactivate-calling-async-function
