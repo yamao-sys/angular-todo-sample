@@ -2,6 +2,21 @@
 
 Angular による TODO リストの作成
 
+## 機能
+- 会員登録・ログイン
+- TODOリストのCRUD
+
+## コマンド
+コンポーネントの作成
+```
+# frontendのコンテナ上で操作
+docker-compose exec frontend sh
+
+cd (作成したいディレクトリ)
+
+ng generate component (コンポーネントのディレクトリ名)
+```
+
 ## 参考
 
 - Angular の状態管理
