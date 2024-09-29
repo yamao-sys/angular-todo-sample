@@ -6,17 +6,26 @@ import { AuthGuard } from 'guards/auth-guard';
 import { TodosNewComponent } from './pages/todos/todos-new/todos-new.component';
 import { TodosEditComponent } from './pages/todos/todos-edit/todos-edit.component';
 import { NAVIGATION_LIST } from './consts/route';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
+  {
+    path: NAVIGATION_LIST.top,
+    component: AppComponent,
+    title: 'TODOリスト',
+    canActivate: [AuthGuard],
+  },
   {
     path: NAVIGATION_LIST.auth.signUp,
     component: SignUpComponent,
     title: '会員登録',
+    canActivate: [AuthGuard],
   },
   {
     path: NAVIGATION_LIST.auth.signIn,
     component: SignInComponent,
     title: 'ログイン',
+    canActivate: [AuthGuard],
   },
   {
     path: NAVIGATION_LIST.todos.list,
