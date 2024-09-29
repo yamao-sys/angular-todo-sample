@@ -8,9 +8,8 @@ describe('BaseFormBoxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BaseFormBoxComponent]
-    })
-    .compileComponents();
+      imports: [BaseFormBoxComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BaseFormBoxComponent);
     component = fixture.componentInstance;

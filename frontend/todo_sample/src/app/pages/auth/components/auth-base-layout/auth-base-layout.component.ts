@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './auth-base-layout.component.html',
-  styleUrl: './auth-base-layout.component.css'
+  styleUrl: './auth-base-layout.component.css',
 })
-export class AuthBaseLayoutComponent {
-
-}
+export class AuthBaseLayoutComponent {}
