@@ -15,6 +15,10 @@ export const fetchTodos = async () => {
   return await getTodoApiClient().todos.$get();
 };
 
+export const fetchTodo = async (id: string) => {
+  return await getTodoApiClient().todos._id(id).$get();
+};
+
 export const postCreateTodo = async (data: CreateTodoDto) => {
   return await getTodoApiClient().todos.post({
     body: {
@@ -24,7 +28,7 @@ export const postCreateTodo = async (data: CreateTodoDto) => {
   });
 };
 
-export const updateTodo = async (id: string, inputTodo: UpdateTodoDto) => {
+export const patchUpdateTodo = async (id: string, inputTodo: UpdateTodoDto) => {
   return await getTodoApiClient().todos._id(id).$patch({
     body: inputTodo,
   });

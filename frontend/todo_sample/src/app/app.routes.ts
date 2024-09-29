@@ -4,6 +4,7 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { TodosListComponent } from './pages/todos/todos-list/todos-list.component';
 import { AuthGuard } from 'guards/auth-guard';
 import { TodosNewComponent } from './pages/todos/todos-new/todos-new.component';
+import { TodosEditComponent } from './pages/todos/todos-edit/todos-edit.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,12 @@ export const routes: Routes = [
     path: 'todos/new',
     component: TodosNewComponent,
     title: 'TODO作成',
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'todos/edit/:id',
+    component: TodosEditComponent,
+    title: 'TODO編集',
     canActivate: [AuthGuard],
   },
 ];
