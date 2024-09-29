@@ -1,0 +1,137 @@
+openapi: 3.0.0
+info:
+  title: Reading Records Controller Schema
+  version: 1.0.0
+
+paths:
+  /todos:
+    post:
+      operationId: createTodos
+      description: TODOの作成
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTodoDto'
+      responses:
+        '201':
+          description: TODOの作成成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTodoResponseDto'
+        '400':
+          $ref: '../errors.yml#responses/400'
+        '401':
+          $ref: '../errors.yml#responses/401'
+    get:
+      operationId: fetchAllTodos
+      description: TODOの一覧取得
+      parameters: []
+      responses:
+        '200':
+          description: TODOの一覧取得成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchAllTodoResponseDto'
+        '400':
+          $ref: '../errors.yml#responses/400'
+        '401':
+          $ref: '../errors.yml#responses/401'
+        '404':
+          $ref: '../errors.yml#responses/404'
+  /todos/{id}:
+    get:
+      operationId: fetchTodo
+      description: TODOの取得
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: TODOの取得成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchTodoResponseDto'
+        '400':
+          $ref: '../errors.yml#responses/400'
+        '401':
+          $ref: '../errors.yml#responses/401'
+        '404':
+          $ref: '../errors.yml#responses/404'
+    patch:
+      operationId: updateTodo
+      description: TODOの更新
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTodoDto'
+      responses:
+        '200':
+          description: TODOの更新成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateTodoResponseDto'
+        '400':
+          $ref: '../errors.yml#responses/400'
+        '401':
+          $ref: '../errors.yml#responses/401'
+        '404':
+          $ref: '../errors.yml#responses/404'
+    delete:
+      operationId: deleteTodo
+      description: TODOの削除
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: TODOの削除成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteTodoResponseDto'
+        '400':
+          $ref: '../errors.yml#responses/400'
+        '401':
+          $ref: '../errors.yml#responses/401'
+        '404':
+          $ref: '../errors.yml#responses/404'
+
+components:
+  schemas:
+    TodoDto:
+      $ref: './components/todo.dto.yml'
+    CreateTodoDto:
+      $ref: './components/create_todo.dto.yml'
+    CreateTodoResponseDto:
+      $ref: './components/create_todo_response.dto.yml'
+    FetchAllTodoResponseDto:
+      $ref: './components/fetch_all_todo_response.dto.yml'
+    FetchTodoResponseDto:
+      $ref: './components/fetch_todo_response.dto.yml'
+    UpdateTodoDto:
+      $ref: './components/update_todo.dto.yml'
+    UpdateTodoResponseDto:
+      $ref: './components/update_todo_response.dto.yml'
+    DeleteTodoResponseDto:
+      $ref: './components/delete_todo_response.dto.yml'

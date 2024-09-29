@@ -1,0 +1,479 @@
+openapi: 3.0.0
+info:
+  title: Reading Records Controller Schema
+  version: 1.0.0
+paths:
+  /todos:
+    post:
+      operationId: createTodos
+      description: TODOの作成
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTodoDto'
+      responses:
+        '201':
+          description: TODOの作成成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTodoResponseDto'
+        '400':
+          description: バリデーションエラー
+          content:
+            application/json:
+              schema:
+                description: バリデーションエラー
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: array
+                    items:
+                      description: バリデーションエラーのレスポンスのDTO
+                      type: string
+                  error:
+                    type: string
+                required:
+                  - statusCode
+                  - message
+                  - error
+        '401':
+          description: 認証エラー
+          content:
+            application/json:
+              schema:
+                description: 認証エラー
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: string
+                required:
+                  - statusCode
+                  - message
+    get:
+      operationId: fetchAllTodos
+      description: TODOの一覧取得
+      parameters: []
+      responses:
+        '200':
+          description: TODOの一覧取得成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchAllTodoResponseDto'
+        '400':
+          description: バリデーションエラー
+          content:
+            application/json:
+              schema:
+                description: バリデーションエラー
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: array
+                    items:
+                      description: バリデーションエラーのレスポンスのDTO
+                      type: string
+                  error:
+                    type: string
+                required:
+                  - statusCode
+                  - message
+                  - error
+        '401':
+          description: 認証エラー
+          content:
+            application/json:
+              schema:
+                description: 認証エラー
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: string
+                required:
+                  - statusCode
+                  - message
+        '404':
+          description: Not Foundエラー
+          content:
+            application/json:
+              schema:
+                description: Not Foundエラー
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: string
+                required:
+                  - statusCode
+                  - message
+  /todos/{id}:
+    get:
+      operationId: fetchTodo
+      description: TODOの取得
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: TODOの取得成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchTodoResponseDto'
+        '400':
+          description: バリデーションエラー
+          content:
+            application/json:
+              schema:
+                description: バリデーションエラー
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: array
+                    items:
+                      description: バリデーションエラーのレスポンスのDTO
+                      type: string
+                  error:
+                    type: string
+                required:
+                  - statusCode
+                  - message
+                  - error
+        '401':
+          description: 認証エラー
+          content:
+            application/json:
+              schema:
+                description: 認証エラー
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: string
+                required:
+                  - statusCode
+                  - message
+        '404':
+          description: Not Foundエラー
+          content:
+            application/json:
+              schema:
+                description: Not Foundエラー
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: string
+                required:
+                  - statusCode
+                  - message
+    patch:
+      operationId: updateTodo
+      description: TODOの更新
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTodoDto'
+      responses:
+        '200':
+          description: TODOの更新成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateTodoResponseDto'
+        '400':
+          description: バリデーションエラー
+          content:
+            application/json:
+              schema:
+                description: バリデーションエラー
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: array
+                    items:
+                      description: バリデーションエラーのレスポンスのDTO
+                      type: string
+                  error:
+                    type: string
+                required:
+                  - statusCode
+                  - message
+                  - error
+        '401':
+          description: 認証エラー
+          content:
+            application/json:
+              schema:
+                description: 認証エラー
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: string
+                required:
+                  - statusCode
+                  - message
+        '404':
+          description: Not Foundエラー
+          content:
+            application/json:
+              schema:
+                description: Not Foundエラー
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: string
+                required:
+                  - statusCode
+                  - message
+    delete:
+      operationId: deleteTodo
+      description: TODOの削除
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: TODOの削除成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteTodoResponseDto'
+        '400':
+          description: バリデーションエラー
+          content:
+            application/json:
+              schema:
+                description: バリデーションエラー
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: array
+                    items:
+                      description: バリデーションエラーのレスポンスのDTO
+                      type: string
+                  error:
+                    type: string
+                required:
+                  - statusCode
+                  - message
+                  - error
+        '401':
+          description: 認証エラー
+          content:
+            application/json:
+              schema:
+                description: 認証エラー
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: string
+                required:
+                  - statusCode
+                  - message
+        '404':
+          description: Not Foundエラー
+          content:
+            application/json:
+              schema:
+                description: Not Foundエラー
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: string
+                required:
+                  - statusCode
+                  - message
+components:
+  schemas:
+    TodoDto:
+      description: TODOのDTO
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        content:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+          format: date
+        updatedAt:
+          type: string
+          format: date
+      required:
+        - id
+        - title
+        - content
+        - createdAt
+        - updatedAt
+    CreateTodoDto:
+      description: TODO作成のrequest DTO
+      type: object
+      properties:
+        title:
+          type: string
+        content:
+          type: string
+          nullable: true
+      required:
+        - title
+    CreateTodoResponseDto:
+      description: TODOのDTO
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        content:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+          format: date
+        updatedAt:
+          type: string
+          format: date
+      required:
+        - id
+        - title
+        - content
+        - createdAt
+        - updatedAt
+    FetchAllTodoResponseDto:
+      description: TODO一覧取得のレスポンスDTO
+      type: array
+      items:
+        description: TODOのDTO
+        type: object
+        properties:
+          id:
+            type: integer
+          title:
+            type: string
+          content:
+            type: string
+            nullable: true
+          createdAt:
+            type: string
+            format: date
+          updatedAt:
+            type: string
+            format: date
+        required:
+          - id
+          - title
+          - content
+          - createdAt
+          - updatedAt
+    FetchTodoResponseDto:
+      description: TODOのDTO
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        content:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+          format: date
+        updatedAt:
+          type: string
+          format: date
+      required:
+        - id
+        - title
+        - content
+        - createdAt
+        - updatedAt
+    UpdateTodoDto:
+      description: TODO更新のrequest DTO
+      type: object
+      properties:
+        title:
+          type: string
+        content:
+          type: string
+          nullable: true
+      required:
+        - title
+    UpdateTodoResponseDto:
+      description: TODOのDTO
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        content:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+          format: date
+        updatedAt:
+          type: string
+          format: date
+      required:
+        - id
+        - title
+        - content
+        - createdAt
+        - updatedAt
+    DeleteTodoResponseDto:
+      description: TODOの削除のレスポンスDTO
+      type: object
+      properties:
+        result:
+          type: boolean
+      required:
+        - result
