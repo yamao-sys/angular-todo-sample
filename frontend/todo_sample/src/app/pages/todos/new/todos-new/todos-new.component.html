@@ -1,0 +1,25 @@
+<div class="p-4 md:p-16">
+  <div class="md:w-3/5 mx-auto">
+    <app-base-form-box>
+      <app-input-form
+        [labelId]="'title'"
+        [labelText]="'タイトル'"
+        [type]="'text'"
+        [inputValue]="todoInput.title"
+        (emitInput)="updateTodoInputs('title', $event)"
+      />
+    </app-base-form-box>
+
+    <app-base-form-box [needsMargin]="true">
+      <app-input-form
+        [labelId]="'content'"
+        [labelText]="'内容'"
+        [type]="'text'"
+        [inputValue]="todoInput.content ?? ''"
+        (emitInput)="updateTodoInputs('content', $event)"
+      />
+    </app-base-form-box>
+
+    <app-submit-button [labelText]="'保存する'" (handleSubmit)="handleCreateTodo()" />
+  </div>
+</div>
