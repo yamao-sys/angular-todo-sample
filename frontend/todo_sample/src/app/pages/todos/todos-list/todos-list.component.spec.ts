@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BaseFormBoxComponent } from './base-form-box.component';
+import { TodosListComponent } from './todos-list.component';
 
-describe('BaseFormBoxComponent', () => {
-  let component: BaseFormBoxComponent;
-  let fixture: ComponentFixture<BaseFormBoxComponent>;
+describe('TodosListComponent', () => {
+  let component: TodosListComponent;
+  let fixture: ComponentFixture<TodosListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BaseFormBoxComponent],
+      imports: [TodosListComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(BaseFormBoxComponent);
+    fixture = TestBed.createComponent(TodosListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

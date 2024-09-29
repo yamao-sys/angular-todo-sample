@@ -12,7 +12,7 @@ export class TodosService {
   }
 
   async findAll() {
-    return await this.prisma.todo.findMany({ include: { subTodos: true } });
+    return await this.prisma.todo.findMany();
   }
 
   async findOne(id: number) {
@@ -20,7 +20,6 @@ export class TodosService {
       where: {
         id,
       },
-      include: { subTodos: true },
     });
   }
 

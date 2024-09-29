@@ -1,0 +1,4 @@
+description: TODO一覧取得のレスポンスDTO
+type: array
+items:
+  $ref: './todo.dto.yml'

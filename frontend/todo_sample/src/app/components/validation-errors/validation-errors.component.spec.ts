@@ -8,9 +8,8 @@ describe('ValidationErrorsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ValidationErrorsComponent]
-    })
-    .compileComponents();
+      imports: [ValidationErrorsComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ValidationErrorsComponent);
     component = fixture.componentInstance;

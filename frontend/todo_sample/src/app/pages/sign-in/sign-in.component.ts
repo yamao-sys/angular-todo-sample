@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { BaseFormBoxComponent } from 'app/components/base-form-box/base-form-box.component';
 import { InputFormComponent } from 'app/components/input-form/input-form.component';
 import { SubmitButtonComponent } from 'app/components/molecules/submit-button/submit-button.component';
+import { NAVIGATION_LIST } from 'app/consts/route';
 
 const INITIAL_VALIDATION_ERRORS = {
   errors: [],
@@ -50,7 +51,7 @@ export class SignInComponent {
         this.signInInputs.password = '';
       } else {
         window.alert('ログインに成功しました！');
-        this.router.navigate(['/']);
+        this.router.navigate([NAVIGATION_LIST.todos.list]);
       }
     } catch (error) {
       // TODO: エラーハンドリング

@@ -1,0 +1,22 @@
+description: TODOのDTO
+type: object
+properties:
+  id:
+    type: integer
+  title:
+    type: string
+  content:
+    type: string
+    nullable: true
+  createdAt:
+    type: string
+    format: date
+  updatedAt:
+    type: string
+    format: date
+required:
+  - id
+  - title
+  - content
+  - createdAt
+  - updatedAt
